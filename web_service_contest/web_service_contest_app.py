@@ -3,9 +3,11 @@ import json
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def hello_world():
     return "Hello"
+
 
 @app.route('/register')
 def register_user():
