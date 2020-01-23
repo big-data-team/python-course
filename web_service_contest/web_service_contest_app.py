@@ -2,6 +2,7 @@ from flask import Flask, Response
 from string import Template
 import json
 import requests
+from requests.exceptions import InvalidSchema
 
 app = Flask(__name__)
 
@@ -20,12 +21,15 @@ def get_services(filename):
 def check_service(host, port, name):
     url = '{host}:{port}/{name}'.format(host=host, port=port, name=name)
 
-    response = requests.get(url=url)
+    try:
+        response = requests.get(url=url)
+    except InvalidSchema:
+        return 'Not alive'
 
     if response.ok:
         return 'Alive'
     else:
-        return 'Nor alive'
+        return 'Not alive'
 
 
 @app.route('/')
@@ -67,7 +71,7 @@ table, th, td {
         host = service['host']
         port = service['port']
         name = service['name']
-                
+
         service_status = check_service(host, port, name)
         table_lines += table_line.substitute(name=name, host=host, port=port, status=service_status, requests=0)
     return table_head + table_lines + table_end
