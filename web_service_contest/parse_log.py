@@ -1,4 +1,5 @@
 import requests
 
 def parse_log(url):
-    return [2]
+
+    return {"request_counts":2}

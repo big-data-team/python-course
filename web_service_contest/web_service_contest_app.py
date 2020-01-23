@@ -5,8 +5,6 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return "Hello"
-    arr = parse_log
+    vals = parse_log(url)
 
-def parse_log(url):
-    raise NotImplemented
 
