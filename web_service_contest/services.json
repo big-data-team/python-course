@@ -1,7 +1,1 @@
-[
-  {
-    "name": "NAME",
-    "host": "HOST",
-    "port": 5000
-  }
-]
+{"name": "ignore", "host": "HOST", "port": 5000}
