@@ -1,6 +1,7 @@
-from flask import Flask
+from flask import Flask, Response
 from string import Template
 import json
+import requests
 
 app = Flask(__name__)
 
@@ -9,13 +10,22 @@ DATABASE = 'services.json'
 
 
 def get_services(filename):
-    services = []
+
     with open(filename) as json_file:
         data = json.load(json_file)
-        for service in data:
-            services.append((service['name'], service['host'], service['port']))
 
-    return services
+    return data
+
+
+def check_service(host, port, name):
+    url = '{host}:{port}/{name}'.format(host=host, port=port, name=name)
+
+    response = requests.get(url=url)
+
+    if response.ok:
+        return 'Alive'
+    else:
+        return 'Nor alive'
 
 
 @app.route('/')
@@ -52,6 +62,12 @@ table, th, td {
     #services = [('wiki','127.0.0.0.1','80',10)]
     services = get_services(DATABASE)
     table_lines = ''
+
     for service in services:
-        table_lines += table_line.substitute(name=service[0], host=service[1], port=service[2], status="GOOD", requests=10)
+        host = service['host']
+        port = service['port']
+        name = service['name']
+                
+        service_status = check_service(host, port, name)
+        table_lines += table_line.substitute(name=name, host=host, port=port, status=service_status, requests=0)
     return table_head + table_lines + table_end
