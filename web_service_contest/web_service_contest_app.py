@@ -13,11 +13,11 @@ def register_user():
     name = request.args.get("name")
     host = request.args.get("host")
     port = request.args.get("port")
-    
-    if not all([host, port, name]):
-        return Response('Не хватает обязательного параметра', 404)
-    
-    
+
+    for param in [host, port, name]:
+        if not param:
+            return Response('Не хватает обязательного параметра {}'.format(param), 404)
+
     with open('services.json', 'a') as fin:
         service_info = {'host': host, 'name': name, 'port': int(port)}
         json.dump(service_info, fin)
