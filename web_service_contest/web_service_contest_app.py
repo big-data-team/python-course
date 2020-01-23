@@ -1,6 +1,4 @@
-from flask import Flask, Response
 from string import Template
-import json
 import requests
 from requests.exceptions import InvalidSchema
 from flask import Flask, Response, request
@@ -17,6 +15,8 @@ def get_services(filename):
     with open(filename) as json_file:
         data = json.load(json_file)
 
+    print('AAAAAa')
+    print(data)
     return data
 
 
@@ -36,7 +36,7 @@ def check_service(host, port, name):
 
 
 @app.route('/')
-def hello_world():
+def table():
     table_head  = '''
     
     <style>
@@ -71,6 +71,7 @@ table, th, td {
     table_lines = ''
 
     for service in services:
+        print(service)
         host = service['host']
         port = service['port']
         name = service['name']
@@ -91,9 +92,12 @@ def register_user():
         if not param:
             return Response('Не хватает обязательного параметра {}'.format(param), 404)
 
-    with open('services.json', 'a') as fin:
+    services = json.load(open(DATABASE))
+
+    with open(DATABASE, 'w') as fin:
+
         service_info = {'host': host, 'name': name, 'port': int(port)}
-        json.dump(service_info, fin)
-        fin.write('\n')
-    
+        services.append(service_info)
+        json.dump(services, fin)
+
     return 'Регистрация прошла успешно'
