@@ -1,6 +1,6 @@
 class InvertedIndex:
     def query(self, words: list) -> list:
-        """Return the list of doc_ids for the givern query"""
+        """Return the list of relevant documents for the given query"""
         pass
 
     def dump(self, filepath: str):
