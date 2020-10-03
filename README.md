@@ -14,11 +14,24 @@ conda activate $env_name
 conda install --file requirements.txt
 ```
 
+See available conda environments with the help of:
+```bash
+conda info --envs
+```
+
+If you need to remove environment use the following command:
+```bash
+conda remove --name $env_name --all
+```
+
 # HowTos
 
 How to use pylint:
 ```bash
+pylint --output-format=colorized -v inverted_index.py
+# in case you would like to ignore some warnings:
 pylint --output-format=colorized -d C0111,C0103 -v inverted_index.py
+pylint --output-format=colorized -d invalid-name,missing-docstring -v inverted_index.py
 ```
 
 How to use pytest:
