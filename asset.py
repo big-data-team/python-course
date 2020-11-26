@@ -54,7 +54,7 @@ def print_asset_revenue(asset_fin, periods):
 
 def setup_parser(parser):
     parser.add_argument("-f", "--filepath", dest="asset_fin", default=sys.stdin, type=FileType("r"))
-    parser.add_argument("-p", "--periods", nargs="+", type=int, metavar="YEARS")
+    parser.add_argument("-p", "--periods", nargs="+", type=int, metavar="YEARS", required=True)
     parser.set_defaults(callback=process_cli_arguments)
 
 
