@@ -46,3 +46,6 @@ pytest --cov -vv --durations=0 .
 1. [Wikipedia sample](https://drive.google.com/open?id=1ASO-nWW5FpvM7PfpOxxPu-0imjcMZhqN) - do not forget to unzip after download
 2. [Stop words](https://drive.google.com/open?id=1NBPhZzUyFc0e-_vQwZpxtrxBqzCsB9Yg)
 
+# Study Artefacts
+
+1. [Flask 404 template](https://drive.google.com/open?id=1EpBf995F7zENPKkUqKq1qP3vFfq0cpgF)
