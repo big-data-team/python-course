@@ -1,0 +1,804 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="zoom:lang" content="en" />
+    <meta name="zoom:last-modified" content="Tue, 22 Dec 2020 21:00:00 GMT" />
+<title>Official exchange rates on&#160;selected date | Bank of Russia</title>
+
+
+
+    <meta property="og:image" content="/common/images/share-1.jpg" />
+
+    
+
+
+            <link rel="stylesheet" type="text/css" href="/common/libs/jquery-ui/jquery-ui.min.css?v=v3348762655" media="all">
+
+            <!--[if IE 9]><link rel="stylesheet" type="text/css" href="/common/style/main-ie9.css?v=v272143794" media="all"><![endif]-->
+
+            <!--[if gt IE 9]><!--><link rel="stylesheet" type="text/css" href="/common/style/main.css?v=v272143794" media="all"><!--<![endif]-->
+
+
+        <script type="text/javascript" src="/common/libs/jquery-3.4.1.min.js?v=v906141912"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery-ui/jquery-ui.min.js?v=v906141912"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery.inputmask.min.js?v=v089173232"></script>
+
+        <script type="text/javascript" src="/common/scripts/vendor.js?v=v1814421028"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery.floatThead.min.js?v=v3348762655"></script>
+
+        <script type="text/javascript" src="/common/scripts/main.min.js?v=v272143794"></script>
+
+
+        <script type="text/javascript" src="/common/libs/localization-en.js?v=v1814421028"></script>
+
+        <script type="text/javascript" src="/js/jquery.cookie.min.js?v=v4260771145"></script>
+
+        <script type="text/javascript" src="/js/site.js?v=v2009763665"></script>
+
+
+
+
+
+<script src="/Modules/Queries/Scripts/queries-ui.js?v=v662783731" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function () {
+        var $menu = $('[data-menu]'),
+            $menuItemBtn = $menu.find('[data-menu-item-btn]'),
+            $menuShow = $('[data-menu-show]'),
+            $menuClose = $('[data-menu-close]');
+        var config = $menu.data('config');
+
+        $menu.find('.header_right').html($('#header .header_right').html());
+
+        $menuShow.on('click.cms_loadwholesite', function (event) {
+            loadWholeSite(true);
+        });
+        $menuShow.on('mouseenter.cms_loadwholesite', function (event) {
+            loadWholeSite(false);
+        });
+
+        var xhr = null, g_openMenu = false;
+        function loadWholeSite(openmenu) {
+            g_openMenu = g_openMenu || openmenu;
+            $menuShow.off('click.cms_loadwholesite mouseenter.cms_loadwholesite');
+            if (xhr === null) {
+                $('.menu_wrap .networks-circle').html($('.networks-circle.footer_networks').html());
+                $('.menu_wrap .header_search').html($('.header .offsetMenu .header_search').html());
+
+                xhr = $.ajax(config.url, {
+                    dataType: "html",
+                    method: "get",
+                    success: function (html) {
+                        $('[data-cms-wholesite-placeholder]').replaceWith(html);
+                        
+                        app.init($menu);
+                                                
+                        for (var i in config.catalogPath) {
+                            $menu.find('li[data-catalog-id="' + config.catalogPath[i] + '"]')
+                                .addClass("_active");
+                            $menu.find('li[data-catalog-id="' + config.catalogPath[i] + '"]')
+                                .closest('[data-tabs-content]')
+                                .trigger('open-anchor');
+                        }
+
+                        
+                        xhr = true;
+                    },
+                    error: function () {
+                        xhr = null;
+                    }
+                });
+            }
+        }
+    });
+    </script>
+
+
+<script>
+    if (window.localStorage) {
+        if (localStorage.getItem('vision-impaired'))
+            document.getElementsByTagName('html')[0].className += ' vision-impaired';
+    }
+</script>
+<script>
+    document.documentElement.style.setProperty('--scrollbar-width', '17px');
+    setTimeout(function () {
+        
+        var div = document.createElement('div');
+
+        div.style.overflowY = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+
+        
+        div.style.visibility = 'hidden';
+
+        document.body.appendChild(div);
+        var scrollWidth = Math.max(div.offsetWidth - div.clientWidth, 0.15); 
+        document.body.removeChild(div);
+        
+        document.documentElement.style.setProperty('--scrollbar-width', scrollWidth + 'px');
+    }, 0);
+</script>
+
+
+
+    
+</head>
+<body>
+    
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(5774506, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/5774506" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->   
+
+    
+    
+
+    <div class="header-print">
+        <div class="offsetMenu">
+            <div class="header-print_inner">
+                <img class="header-print_logo" alt="cbr" src="/common/images/logo.svg">
+                <ul class="header-print_contacts">
+<li>12&nbsp;Neglinnaya Street, Moscow, 107016 Russia</li>
+
+<li><nobr class="phone">8 800 300-30-00</nobr></li>
+<li>www.cbr.ru</li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+    <header class="header" id="header">
+        <div class="top-line" data-top-line="">
+            <div class="offsetMenu">
+                <div class="col-md-23 offset-md-1">
+                    <div class="top-line_inner header_inner">
+                        <div class="row">
+                            <div class="col-xl-5 col-md-9">
+                                <div class="header_left">
+                                        <div class="header_menu" data-menu-show=""></div>
+                                    <a class="header_logo_eng" href="/eng/"></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-17 col-md-13 offset-md-1 header_block">
+                                <div class="header_search">
+                                        <a class="header_search_btn" href="#" data-search-form-show="" title="search">
+        <div class="header_search_icon"></div><span class="d-none d-xl-block">Search</span>
+    </a>
+
+
+                                </div>
+                                <div class="d-none d-md-block">
+                                    <div class="header_right">
+                                        <div class="header_link"><a href="/eng/reception/">Online reception</a></div>
+<div class="header_lang">
+            <div class="header_lang_item"><a href="/Localization/SwitchLanguage?url=%2Feng%2Fcurrency_base%2Fdaily%2F&amp;from=en-GB&amp;to=ru-RU"><!--noindex-->RU<!--/noindex--></a></div>
+            <div class="header_lang_item _active"><span><!--noindex-->EN<!--/noindex--></span></div>
+</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offsetMenu">
+            <div class="col-md-23 offset-md-1">
+                <div class="header_inner">
+                    <div class="row">
+                        <div class="col-xl-5 col-md-9">
+                            <div class="header_left">
+                                    <div class="header_menu" data-menu-show=""></div>
+                                <a class="header_logo_eng" href="/eng/"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-17 col-md-13 offset-md-1 header_block">
+                            <div class="header_search">
+                                    <a class="header_search_btn" href="#" data-search-form-show="" title="search">
+        <div class="header_search_icon"></div><span class="d-none d-xl-block">Search</span>
+    </a>
+
+
+                            </div>
+                            <div class="d-none d-md-block">
+                                <div class="header_right">
+                                    <div class="header_link"><a href="/eng/reception/">Online reception</a></div>
+<div class="header_lang">
+            <div class="header_lang_item"><a href="/Localization/SwitchLanguage?url=%2Feng%2Fcurrency_base%2Fdaily%2F&amp;from=en-GB&amp;to=ru-RU"><!--noindex-->RU<!--/noindex--></a></div>
+            <div class="header_lang_item _active"><span><!--noindex-->EN<!--/noindex--></span></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <form class="search-form" action="/eng/search/" method="get" data-search-form="">
+    <div class="offsetMenu">
+        <div class="col-md-23 offset-md-1">
+            <div class="search-form_inner">
+                <div class="search-form_title">What do you want to find?</div>
+                <div class="search-form_content">
+                    <div class="search-form_block">
+                        <div class="search-form_icon"></div>
+                        <div class="search-form_field">
+                            <input name="text" type="text" placeholder="Start typing" data-search-form-input="" />
+                        </div>
+                    </div>
+                    <div class="search-form_btn">
+                        <button class="b-btn _blue" data-search-form-btn="">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+<div class="menu_wrap" data-menu="" data-config="{&quot;catalogPath&quot;:[22256,22248,21244],&quot;url&quot;:&quot;/Catalog/SiteMap/GetWholeSiteHtml?blockId=59192&quot;}">
+    <div class="offsetMenu">
+        <div class="header_menu _close menu_close d-none d-md-block" data-menu-close=""></div>
+        <div class="header_inner top-line_inner d-block d-md-none">
+            <div class="row">
+                <div class="col-xl-5 col-md-9">
+                    <div class="header_left">
+                        <div class="header_menu _close" data-menu-close=""></div><a class="header_logo" href="/"></a>
+                    </div>
+                </div>
+                <div class="col-xl-17 col-md-13 offset-md-1 header_block">
+                    <div class="header_search"></div>
+                </div>
+            </div>
+        </div>
+        <div class="menu row" data-tabs="data-tabs">
+            <div class="menu_quick col-md-7">
+                <div class="menu_quick_tabs">
+                    <a class="menu_tab _active" href="#" data-tabs-tab="1">Activity</a>
+                    <a class="menu_tab" href="#" data-tabs-tab="2">Documents and data</a>
+                    <a class="menu_tab" href="#" data-tabs-tab="3">About Bank of Russia</a>
+                    <a class="menu_tab" href="#" data-tabs-tab="4">Services</a>
+                </div>
+                <div class="menu_quick_links">
+                    <div class="phones">
+  <a class="menu_phone_val" href="tel:+74993003000">
+  <div class="plus">+</div>7 499 300-30-00</a>
+  <a class="menu_phone_val" href="tel:88003003000">8 800 300-30-00</a>
+</div>
+<div class="inner_links">
+  <a href="/eng/news/" title="Events">Events</a>
+  <a href="/eng/contacts/" title="Contacts">Contacts</a>
+  <a href="/eng/sitemap" title="site map ">Site map</a>
+  <a href="/eng/about/" title="About the Site ">About the Site </a>
+</div>
+<div class="networks-circle">
+  <a class="networks-circle_item _fb" href="https://www.facebook.com/cbr.ru/" title="Facebook"></a>
+  <a class="networks-circle_item _ig" href="https://www.instagram.com/cbrf_official/" title="Instagram"></a>
+  <a class="networks-circle_item _vk" href="https://vk.com/cbr_official" title="ВКонтакте"></a>
+  <a class="networks-circle_item _tw" href="https://twitter.com/bank_of_russia" title="Twitter"></a>
+  <a class="networks-circle_item _yt" href="https://www.youtube.com/user/BankofRussia" title="Youtube"></a>
+</div>
+                </div>
+            </div>
+            <div class="d-md-none link-above">
+                <div class="header_right"></div>
+            </div>
+            <div class="menu_content_container col-md with-centered-loader" data-cms-wholesite-placeholder="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div id="content">
+        <div class="offsetMenu">
+            <div class="container-fluid">
+                <div class="col-md-23 offset-md-1">
+                    <div class="breadcrumbs">
+    <div class="breadcrumbs_item"><a class="breadcrumbs_home" href="/"></a></div>
+        <div class="breadcrumbs_item">
+            <a href="/eng/hd_base/"><!--noindex-->Databases<!--/noindex--></a>
+        </div>
+        <div class="breadcrumbs_item">
+            <a href="/eng/currency_base/"><!--noindex-->Foreign Currency Market<!--/noindex--></a>
+        </div>
+    </div>
+
+
+                    <!--index-->
+<h1><span class="referenceable">Official exchange rates on&#160;selected date</span>
+</h1>
+                                        
+
+
+
+
+
+
+
+                                                            <style type='text/css'>
+/*<![CDATA[*/
+@media print {
+  .breadcrumbs {display:none;}
+  h1 {margin-bottom:0px;} 
+  .h3 {margin-top:0px;margin-bottom:20px;}
+  .page-info {margin-top:0px;margin-bottom:0px;border-top:none;padding-top:0px;}
+  .block-part {margin-bottom:0px;}
+  .table-wrapper {margin-bottom:0px;}
+  table.data td, table.data th {padding:4px;}
+}
+/*]]*/
+</style>
+
+
+<script type="text/javascript">
+<!--
+    var UniDbQuery_Data = {"CurrentDT":[{"DT":"2020-12-24T00:00:00","MaxDate":"2020-12-24T00:00:00","MinDate":"1992-07-01T00:00:00"}]};
+// -->
+</script>
+
+        <!--noindex-->
+<div class="block-part">
+<form action="/eng/currency_base/daily/" data-auto-submit="true" method="get"><input id="UniDbQuery_Posted" name="UniDbQuery.Posted" type="hidden" value="True" />        <div class="block-part vertical" id="UniDbQuery_form">
+
+
+
+
+    <div class="filters_wrapper">
+        <div class="filters">
+
+
+
+    <div class="filter" >
+            <div class="datepicker-filter" data-datepicker-filter
+         data-min-date="01/07/1992"
+         data-max-date="24/12/2020"
+         data-default-value="24/12/2020">
+        <input class="datepicker-filter_input" type="hidden" name="UniDbQuery.To" value="24/12/2020" />
+        <button class="datepicker-filter_button" type="button">24/12/2020</button>
+        <div class="datepicker-filter_modal">
+            <div class="datepicker-filter_head">
+                <div class="datepicker-filter_close"></div>
+            </div>
+            <div class="datepicker-filter_body">
+                <div class="datepicker-filter_datepicker datepicker-custom"></div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+        </div>
+</form></div>        <!--/noindex-->
+<h2 class="h3">
+		  The Central Bank of the Russian Federation has set from  24/12/2020 the following exchange rates of foreign currencies against the ruble  without assuming any liability to buy or sell foreign currency at the rates below		
+		</h2>
+<div class="table-wrapper">
+  <div class="table">
+    <table class="data">
+      <tbody>
+        <tr>
+          <th>Num сode</th>
+          <th>Char сode</th>
+          <th>Unit</th>
+          <th>Currency</th>
+          <th>Rate</th>
+        </tr>
+        <tr>
+          <td>036</td>
+          <td>AUD</td>
+          <td>1</td>
+          <td>Australian Dollar</td>
+          <td>57.0229</td>
+        </tr>
+        <tr>
+          <td>944</td>
+          <td>AZN</td>
+          <td>1</td>
+          <td>Azerbaijan Manat</td>
+          <td>44.4127</td>
+        </tr>
+        <tr>
+          <td>051</td>
+          <td>AMD</td>
+          <td>100</td>
+          <td>Armenia Dram</td>
+          <td>14.4485</td>
+        </tr>
+        <tr>
+          <td>933</td>
+          <td>BYN</td>
+          <td>1</td>
+          <td>Belarussian Ruble</td>
+          <td>29.2821</td>
+        </tr>
+        <tr>
+          <td>975</td>
+          <td>BGN</td>
+          <td>1</td>
+          <td>Bulgarian lev</td>
+          <td>46.9816</td>
+        </tr>
+        <tr>
+          <td>986</td>
+          <td>BRL</td>
+          <td>1</td>
+          <td>Brazil Real</td>
+          <td>14.6235</td>
+        </tr>
+        <tr>
+          <td>348</td>
+          <td>HUF</td>
+          <td>100</td>
+          <td>Hungarian Forint</td>
+          <td>25.4265</td>
+        </tr>
+        <tr>
+          <td>410</td>
+          <td>KRW</td>
+          <td>1000</td>
+          <td>South Korean Won</td>
+          <td>68.1688</td>
+        </tr>
+        <tr>
+          <td>344</td>
+          <td>HKD</td>
+          <td>10</td>
+          <td>Hong Kong Dollar</td>
+          <td>97.3339</td>
+        </tr>
+        <tr>
+          <td>208</td>
+          <td>DKK</td>
+          <td>1</td>
+          <td>Danish Krone</td>
+          <td>12.3566</td>
+        </tr>
+        <tr>
+          <td>840</td>
+          <td>USD</td>
+          <td>1</td>
+          <td>US Dollar</td>
+          <td>75.4571</td>
+        </tr>
+        <tr>
+          <td>978</td>
+          <td>EUR</td>
+          <td>1</td>
+          <td>Euro</td>
+          <td>91.9822</td>
+        </tr>
+        <tr>
+          <td>356</td>
+          <td>INR</td>
+          <td>10</td>
+          <td>Indian Rupee</td>
+          <td>10.2294</td>
+        </tr>
+        <tr>
+          <td>398</td>
+          <td>KZT</td>
+          <td>100</td>
+          <td>Kazakhstan Tenge</td>
+          <td>17.9088</td>
+        </tr>
+        <tr>
+          <td>124</td>
+          <td>CAD</td>
+          <td>1</td>
+          <td>Canadian Dollar</td>
+          <td>58.5438</td>
+        </tr>
+        <tr>
+          <td>417</td>
+          <td>KGS</td>
+          <td>100</td>
+          <td>Kyrgyzstan Som</td>
+          <td>93.0621</td>
+        </tr>
+        <tr>
+          <td>156</td>
+          <td>CNY</td>
+          <td>1</td>
+          <td>China Yuan</td>
+          <td>11.5410</td>
+        </tr>
+        <tr>
+          <td>498</td>
+          <td>MDL</td>
+          <td>10</td>
+          <td>Moldova Lei</td>
+          <td>43.7813</td>
+        </tr>
+        <tr>
+          <td>934</td>
+          <td>TMT</td>
+          <td>1</td>
+          <td>New Turkmenistan Manat</td>
+          <td>21.5900</td>
+        </tr>
+        <tr>
+          <td>578</td>
+          <td>NOK</td>
+          <td>10</td>
+          <td>Norwegian Krone</td>
+          <td>86.6526</td>
+        </tr>
+        <tr>
+          <td>985</td>
+          <td>PLN</td>
+          <td>1</td>
+          <td>Polish Zloty</td>
+          <td>20.4264</td>
+        </tr>
+        <tr>
+          <td>946</td>
+          <td>RON</td>
+          <td>1</td>
+          <td>Romanian Leu</td>
+          <td>18.8676</td>
+        </tr>
+        <tr>
+          <td>960</td>
+          <td>XDR</td>
+          <td>1</td>
+          <td>SDR</td>
+          <td>108.8099</td>
+        </tr>
+        <tr>
+          <td>702</td>
+          <td>SGD</td>
+          <td>1</td>
+          <td>Singapore Dollar</td>
+          <td>56.5561</td>
+        </tr>
+        <tr>
+          <td>972</td>
+          <td>TJS</td>
+          <td>10</td>
+          <td>Tajikistan Ruble</td>
+          <td>66.6288</td>
+        </tr>
+        <tr>
+          <td>949</td>
+          <td>TRY</td>
+          <td>10</td>
+          <td>Turkish Lira</td>
+          <td>98.7607</td>
+        </tr>
+        <tr>
+          <td>860</td>
+          <td>UZS</td>
+          <td>10000</td>
+          <td>Uzbekistan Sum</td>
+          <td>72.0439</td>
+        </tr>
+        <tr>
+          <td>980</td>
+          <td>UAH</td>
+          <td>10</td>
+          <td>Ukrainian Hryvnia</td>
+          <td>26.5297</td>
+        </tr>
+        <tr>
+          <td>826</td>
+          <td>GBP</td>
+          <td>1</td>
+          <td>British Pound Sterling</td>
+          <td>101.1955</td>
+        </tr>
+        <tr>
+          <td>203</td>
+          <td>CZK</td>
+          <td>10</td>
+          <td>Czech Koruna</td>
+          <td>34.9857</td>
+        </tr>
+        <tr>
+          <td>752</td>
+          <td>SEK</td>
+          <td>10</td>
+          <td>Swedish Krona</td>
+          <td>90.8618</td>
+        </tr>
+        <tr>
+          <td>756</td>
+          <td>CHF</td>
+          <td>1</td>
+          <td>Swiss Franc</td>
+          <td>84.8882</td>
+        </tr>
+        <tr>
+          <td>710</td>
+          <td>ZAR</td>
+          <td>10</td>
+          <td>S.African Rand</td>
+          <td>51.6900</td>
+        </tr>
+        <tr>
+          <td>392</td>
+          <td>JPY</td>
+          <td>100</td>
+          <td>Japanese Yen</td>
+          <td>72.9265</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<form action="/Content/SaveToPdf/Page" class="print-button-wrap" method="get">    <input type="hidden" name="url" value="/eng/currency_base/daily/" />
+    <input class="btn _medium _outline" type="submit" value="Save as PDF" />
+</form>
+
+                    
+                    <!--/index-->
+                    
+    <div class="page-info">
+        <!--noindex-->
+        
+
+
+<div class="page-info_helpful"
+     data-page-feedback=""
+     data-feedback-url="/Content/PageInfo/RegisterFeedback">
+    <!--noindex-->
+    <div class="helpful" data-helpful="">
+        Was this page useful?
+        <div class="helpful_btns">
+            <button class="helpful_btn _yes" data-helpful-btn="yes"><i class="helpful_icon"></i><span>Yes</span></button>
+            <button class="helpful_btn _no" data-helpful-btn="no"><i class="helpful_icon"></i><span>No</span></button>
+        </div>
+    </div>
+    <!--/noindex-->
+</div>
+
+            <div class="page-info_last-update">Last updated on: 23/12/2020</div>
+        <!--/noindex-->
+    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer">
+        <div class="offsetMenu">
+            <div class="footer_main">
+                <div class="col-md-23 col-xl-22 offset-md-1 offset-xl-2">
+                    <div class="footer_top">
+                        <a class="footer_logo_eng" href="/eng/"></a>
+                        <div class="footer_up gotoUp">
+                            <div class="footer_up_title">Up</div>
+                            <div class="footer_up_icon"></div>
+                        </div>
+                    </div>
+                    
+<div class="footer_contacts">
+<div class="footer_address">12&nbsp;Neglinnaya Street, Moscow, 107016 Russia</div>
+<div class="footer_phones">
+
+<div class="footer_phone"><nobr class="phone"><a class="footer_phone_val" href="tel:88003003000">8 800 300-30-00</a></nobr></div>
+
+<div class="footer_phone"><nobr class="phone"><a class="footer_phone_val" href="tel:+74993003000">+7 499 300-30-00</a></nobr></div>
+
+</div>
+</div>
+<div class="footer_main_block">
+<div class="footer_left-menu">
+
+<div class="footer_left-menu_item"><a href="/eng/about_br/irp/">Investor Relations</a></div>
+<div class="footer_left-menu_item"><a href="/eng/other/holidays/">Public Holidays in&nbsp;Russia</a></div>
+
+</div>
+<div class="networks-circle footer_networks">
+<a class="networks-circle_item _fb" href="https://www.facebook.com/cbr.ru/"></a>
+<a class="networks-circle_item _ig" href="https://www.instagram.com/cbrf_official/" title="Instagram"></a>
+<a class="networks-circle_item _vk" href="https://vk.com/cbr_official"></a>
+<a class="networks-circle_item _tw" href="https://twitter.com/bank_of_russia"></a>
+<a class="networks-circle_item _yt" href="https://www.youtube.com/user/BankofRussia"></a></div>
+</div>
+<div class="footer_menu">
+<div class="footer_menu_items">
+<div class="footer_menu_item"><a href="/eng/about/">About the&nbsp;Site</a></div>
+<div class="footer_menu_item"><a href="/eng/contacts/">Contacts</a></div>
+<div class="footer_menu_item"><a href="/eng/development/">Technical resources</a></div>
+
+<!--<div class="footer_menu_item"><a href="/eng/development/">Links</a></div>-->
+</div>
+<div class="footer_menu_item _visually-impaired"><a href="#" title="Mode for visually impaired"><span class="visually-impaired-on">Mode for&nbsp;visually impaired</span><span class="visually-impaired-off">Regular version</span></a></div>
+</div>
+
+
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="col-md-23 col-xl-22 offset-md-1 offset-xl-2 row">
+                    <div class="footer_bottom_text col-md-12 col-xl-11">&#169; Bank of Russia, 2000–2020.</div>
+<div class="footer_bottom_aic col-md-11">Design by <a href="https://aic.ru" target="_blank"><img src="/common/images/icons/aic-logo.svg" /></a></div>
+
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <div class="popup-cookies" data-popup-cookies>
+        <div class="popup-cookies_title">
+            The Bank of Russia website uses cookies
+        </div>
+        <div class="popup-cookies_subtitle">
+            By using <a href="/eng/">www.cbr.ru</a>, you accept
+            the  <a href="/eng/user_agreement/">User Agreement.</a>
+        </div>
+        <button class="btn _medium _blue " data-popup-cookies-btn>
+            Accept
+        </button>
+    </div>
+
+    
+<!--[if IE 9]><script>$('body').addClass('ie9')</script><![endif]-->
+<script src="/Modules/Content/Scripts/PageInfo.js?v=v3116962712" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            Content_PageInfo.init($('[data-page-feedback]'));
+        });
+    </script>
+
+
+
+</body>
+</html>
