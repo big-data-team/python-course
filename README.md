@@ -49,4 +49,3 @@ pytest --cov -vv --durations=0 .
 # Study Artefacts
 
 1. [Flask 404 template](https://drive.google.com/open?id=1EpBf995F7zENPKkUqKq1qP3vFfq0cpgF)
-
