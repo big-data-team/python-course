@@ -2,6 +2,9 @@
 from argparse import ArgumentParser, FileType
 import sys
 import logging
+import logging.config
+
+import yaml
 
 logger = logging.getLogger("asset")
 
@@ -47,14 +50,23 @@ def print_asset_revenue(asset_fin, periods):
     for period in periods:
         revenue = asset.calculate_revenue(period)
         logger.debug("asset %s for period %s gives %s", asset, period, revenue)
-        print(f"{period:5}: {revenue}")
-        # consider nice formatting:
-        # print(f"{period:5}: {revenue:10.3f}")
+        print(f"{period:5}: {revenue:10.3f}")
+
+
+def setup_logging(logging_yaml_config_fpath):
+    """setup logging via YAML if it is provided"""
+    if logging_yaml_config_fpath:
+        with open(logging_yaml_config_fpath) as config_fin:
+            logging.config.dictConfig(yaml.safe_load(config_fin))
 
 
 def setup_parser(parser):
     parser.add_argument("-f", "--filepath", dest="asset_fin", default=sys.stdin, type=FileType("r"))
     parser.add_argument("-p", "--periods", nargs="+", type=int, metavar="YEARS", required=True)
+    parser.add_argument(
+        "--logging-config", dest="logging_yaml_config_fpath",
+        default=None, help="path to logging config in YAML format",
+    )
     parser.set_defaults(callback=process_cli_arguments)
 
 
@@ -65,6 +77,7 @@ def main():
     )
     setup_parser(parser)
     arguments = parser.parse_args()
+    setup_logging(arguments.logging_yaml_config_fpath)
     arguments.callback(arguments)
 
 
