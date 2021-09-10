@@ -6,6 +6,7 @@ import logging.config
 
 import yaml
 
+WARN_PERIOD_THRESHOLD = 5
 logger = logging.getLogger("asset")
 
 
@@ -32,6 +33,14 @@ class Asset:
         repr_ = f"{self.__class__.__name__}({self.name}, {self.capital}, {self.interest})"
         return repr_
 
+    def __eq__(self, rhs):
+        outcome = (
+            self.name == rhs.name
+            and self.capital == rhs.capital
+            and self.interest == rhs.interest
+        )
+        return outcome
+
 
 
 def load_asset_from_file(fileio):
@@ -47,6 +56,10 @@ def process_cli_arguments(arguments):
 
 def print_asset_revenue(asset_fin, periods):
     asset = load_asset_from_file(asset_fin)
+
+    if len(periods) >= WARN_PERIOD_THRESHOLD:
+        logger.warning("too many periods were provided: %s", len(periods))
+
     for period in periods:
         revenue = asset.calculate_revenue(period)
         logger.debug("asset %s for period %s gives %s", asset, period, revenue)
