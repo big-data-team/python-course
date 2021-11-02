@@ -45,6 +45,7 @@ pytest --cov -vv --durations=0 .
 
 1. [Wikipedia sample](https://drive.google.com/open?id=1ASO-nWW5FpvM7PfpOxxPu-0imjcMZhqN) - do not forget to unzip after download
 2. [Stop words](https://drive.google.com/open?id=1NBPhZzUyFc0e-_vQwZpxtrxBqzCsB9Yg)
+3. [DVC experimental data](https://drive.google.com/file/d/1D-YgtxAlr5Gf--8nWY1p4N8G1tFa94xc/view?usp=sharing) - do not forget to unzip after download
 
 # Study Artefacts
 
