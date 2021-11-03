@@ -1,0 +1,55 @@
+dvc.init:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.ignore:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.remote:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.add:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.data_management_1:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.data_management_2:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.checkout_1:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.checkout_2:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.delete:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.full_info:
+    stdin: |-
+        provide your
+        multiline answer
+        here
+dvc.change_config:
+    stdin: |-
+        provide your
+        multiline answer
+        here
