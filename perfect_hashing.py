@@ -35,7 +35,7 @@ class HashTablePerfect:
 
     def fill_hash_table(self, collection: List[int]):
         # TODO: implement me and use array.array
-        raise ValueError(f"cannot build perfect hash table within {MAX_TRIALS} trials")
+        raise ValueError("cannot build perfect hash table within %s trials" % MAX_TRIALS)
 
     def __contains__(self, item) -> bool:
         # TODO: implement me
