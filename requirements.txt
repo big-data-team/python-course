@@ -1,4 +1,6 @@
 Flask==1.1.2
+markupsafe==2.0.1  # https://itsmycode.com/importerror-cannot-import-name-json-from-itsdangerous/
+itsdangerous==2.0.1  # https://itsmycode.com/importerror-cannot-import-name-json-from-itsdangerous/
 beautifulsoup4==4.9.1
 gunicorn==20.0.4
 jupyter==1.0.0
