@@ -9,7 +9,7 @@ How to write clean, maintainable and scalable code on Python:
 2. Create environment:
 ```bash
 export env_name="bdt-python-course"
-conda create -n $env_name python=3.7
+conda create -n $env_name python=3.10
 conda activate $env_name
 conda install --file requirements.txt
 ```
