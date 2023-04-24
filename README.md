@@ -11,8 +11,17 @@ How to write clean, maintainable and scalable code on Python:
 export env_name="bdt-python-course"
 conda create -n $env_name python=3.10
 conda activate $env_name
+# there are packages that no more supported by conda
+# so, intead of this:
 conda install --file requirements.txt
+# call directly pip:
+pip install -r requirements.txt
 ```
+
+For more information about Python virtual environments see:
+* https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
+* https://docs.python.org/3/library/site.html
+* https://docs.python.org/3/library/venv.html
 
 See available conda environments with the help of:
 ```bash
