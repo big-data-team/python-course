@@ -1,0 +1,18 @@
+unix.cli.avg_article_size:
+  stdin: |-
+    #!/usr/bin/env bash
+    set -x
+
+    # $dataset_fpath is defined via export
+    your solution is here
+    echo $avg_article_size
+  result: 1234.56 # provide the answer for wikipedia_sample
+unix.cli.avg_topic_article_size:
+  stdin: |-
+    #!/usr/bin/env bash
+    set -x
+
+    # $dataset_fpath and $topic are defined via export
+    your solution is here
+    echo $avg_topic_article_size
+  result: 1234.56 # provide the answer for wikipedia_sample

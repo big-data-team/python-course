@@ -1,0 +1,15 @@
+unix.cli.word_count_simple:
+  stdin: your solution script is here
+  result: 12345678 # provide the answer for wikipedia_sample
+unix.cli.word_count_complex:
+  stdin: your solution script is here
+  result: 12345678 # provide the answer for wikipedia_sample
+unix.cli.word_count_unique:
+  stdin: your solution script is here
+  result: 12345678 # provide the answer for wikipedia_sample
+unix.cli.word_count_must_uniq:
+  stdin: your solution script is here
+  result: 12345678 # provide the answer for wikipedia_sample
+unix.cli.topic_article_count:
+  stdin: your solution script is here
+  result: 12345678 # provide the answer for wikipedia_sample
