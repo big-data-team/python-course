@@ -7,4 +7,4 @@ pylint==2.5.3
 pytest==7.2.1
 pytest-cov==2.10.0
 PyYAML==6.0
-requests==2.24.0
+requests==2.31.0
