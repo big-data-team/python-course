@@ -1,73 +1,74 @@
 # About
+Practice Course on Big Data
+* https://bigdatateam.org/big-data-course
 
-The repository is used during the following courses:
-1. Effective Python
+# Spark Configuration
 
-- How to write clean, maintainable and scalable code on Python
-- https://bigdatateam.org/python-course
+Use port_1 and port_2 provided to you during the class.
 
-2. Python for Big Data
-
-- unix CLI
-- data analysis with regex, pandas and SQL
-- reproducible research
-- computer science fundamentals: data structures, algorithms, Big O notation (complexity)
-- https://bigdatateam.org/python-for-big-data
-
-# Environment Configuration
-
-1. Download [requirements.txt](requirements.txt)
-2. Create environment:
+In case you would like to run Jupyter notebook interface for pyspark, at first, you need to launch Jupyter:
 ```bash
-export env_name="bdt-python-course"
-conda create -n $env_name python=3.10
-conda activate $env_name
-# there are packages that no more supported by conda
-# so, intead of this:
-conda install --file requirements.txt
-# call directly pip:
-pip install -r requirements.txt
+jupyter notebook --port=port_1
 ```
 
-For more information about Python virtual environments see:
-* https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
-* https://docs.python.org/3/library/site.html
-* https://docs.python.org/3/library/venv.html
+As soon as you launch notebook, you can start PySpark with the help of the forllowing configuration:
 
-See available conda environments with the help of:
-```bash
-conda info --envs
+```python
+from pyspark import SparkConf, SparkContext
+
+spark_conf = (
+    SparkConf()
+    .set("spark.ui.port", port_2)
+    .set("spark.driver.memory", "512m")
+    .set("spark.executor.instances", "2")
+    .set("spark.executor.cores", "1")
+    .setAppName("your shiny name")
+    .setMaster("yarn")
+)
+sc = SparkContext(conf=spark_conf)
 ```
 
-If you need to remove environment use the following command:
+You will be able to use the same code snippet for spark-submit.
+
+Use the following shortuct to start interactive Jupyter Pyspark session:
 ```bash
-conda remove --name $env_name --all
+PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=python3.10 PYSPARK_DRIVER_PYTHON_OPTS='notebook --port=port_1' pyspark --conf spark.ui.port=port_2 --driver-memory 512m --master yarn --num-executors 2 --executor-cores 1
+# set Python v.3.6 for Spark 2.4.7 (old version compatibility)
+PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_PYTHON=python3.10 PYSPARK_DRIVER_PYTHON_OPTS='notebook --port=port_1' pyspark --conf spark.ui.port=port_2 --driver-memory 512m --master yarn --num-executors 2 --executor-cores 1
 ```
 
-# HowTos
+## Spark Notes
 
-How to use pylint:
-```bash
-pylint --output-format=colorized -v inverted_index.py
-# in case you would like to ignore some warnings:
-pylint --output-format=colorized -d C0111,C0103 -v inverted_index.py
-pylint --output-format=colorized -d invalid-name,missing-docstring -v inverted_index.py
+You usually use "brain-master" for ssh forwarding. Be cautions about "localhost" in the following code snippet.
+Add the following rule for ssh forwarding:
+```
+-L port_1:localhost:port_1 
 ```
 
-How to use pytest:
+Open the following URL in you favourite browser:
+* http://localhost:port_1
+
+
+Spark Structured Streaming and Kafka will require to add extra flags:
 ```bash
-pytest -v .
-pytest --cov -v .
-pytest --cov -vv --durations=0 .
+# Spark 3.2.4
+--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.4
+# Spark 2.4.7
+--packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.0
+```
+see more details at:
+* https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html
+
+Spark Cassandra will require two following flags:
+```bash
+--conf spark.cassandra.connection.host=brain-node1
+# Spark 3.2.4
+--packages com.datastax.spark:spark-cassandra-connector_2.12:3.2.0
+# Spark 2.4.7
+--packages com.datastax.spark:spark-cassandra-connector_2.11:2.4.2
 ```
 
-# Study Datasets
-
-1. [Wikipedia sample](https://drive.google.com/open?id=1ASO-nWW5FpvM7PfpOxxPu-0imjcMZhqN) - do not forget to unzip after download
-2. [Stop words](https://drive.google.com/open?id=1NBPhZzUyFc0e-_vQwZpxtrxBqzCsB9Yg)
-3. [DVC experimental data](https://drive.google.com/file/d/1D-YgtxAlr5Gf--8nWY1p4N8G1tFa94xc/view?usp=sharing) - do not forget to unzip after download
-4. [Stackoverflow posts dump sample (XML)](https://drive.google.com/file/d/1oDUNOK1Ap0-YV930Z78WQZVuKHtqZ2WC/view)
-
-# Study Artefacts
-
-1. [Flask 404 template](https://drive.google.com/open?id=1EpBf995F7zENPKkUqKq1qP3vFfq0cpgF)
+Useful Spark documentation links:
+* PySpark API: [v.3.2.4](https://spark.apache.org/docs/3.2.4/api/python/index.html), [v.2.4.7](https://spark.apache.org/docs/2.4.7/api/python/index.html)
+* PySpark SQL API: [v.3.2.4](https://spark.apache.org/docs/3.2.4/api/python/reference/pyspark.sql.html), [v.2.4.7](https://spark.apache.org/docs/2.4.7/api/python/pyspark.sql.html)
+* Pandas API on Spark (experimental): https://spark.apache.org/docs/3.2.4/api/python/reference/pyspark.pandas/index.html
