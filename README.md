@@ -67,6 +67,7 @@ pytest --cov -vv --durations=0 .
 2. [Stop words](https://drive.google.com/open?id=1NBPhZzUyFc0e-_vQwZpxtrxBqzCsB9Yg)
 3. [DVC experimental data](https://drive.google.com/file/d/1D-YgtxAlr5Gf--8nWY1p4N8G1tFa94xc/view?usp=sharing) - do not forget to unzip after download
 4. [Stackoverflow posts dump sample (XML)](https://drive.google.com/file/d/1oDUNOK1Ap0-YV930Z78WQZVuKHtqZ2WC/view)
+5. [Pandas HW data](https://drive.google.com/file/d/196D3snvk5hL3_aeIYnKPJXA1HUYrxMky/view)
 
 # Study Artefacts
 
