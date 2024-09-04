@@ -4,7 +4,7 @@ The repository is used during the following courses:
 1. Effective Python
 
 - How to write clean, maintainable and scalable code on Python
-- https://bigdatateam.org/python-course
+- https://bigdatateam.org/ru/python-course
 
 2. Python for Big Data
 
@@ -12,7 +12,7 @@ The repository is used during the following courses:
 - data analysis with regex, pandas and SQL
 - reproducible research
 - computer science fundamentals: data structures, algorithms, Big O notation (complexity)
-- https://bigdatateam.org/python-for-big-data
+- https://bigdatateam.org/ru/python-for-big-data-analysis
 
 # Environment Configuration
 
