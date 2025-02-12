@@ -77,7 +77,7 @@ pytest --cov -vv --durations=0 .
 # Contributors
 
 <a href = "https://github.com/big-data-team/python-course/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = big-data-team/python-course"/>
+  <img src = "https://contrib.rocks/image?repo=big-data-team/python-course"/>
 </a>
 
-// made with [contributors-img](https://contrib.rocks).
+<!-- made with [contributors-img](https://contrib.rocks) -->
