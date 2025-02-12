@@ -72,3 +72,12 @@ pytest --cov -vv --durations=0 .
 # Study Artefacts
 
 1. [Flask 404 template](https://drive.google.com/open?id=1EpBf995F7zENPKkUqKq1qP3vFfq0cpgF)
+
+
+# Contributors
+
+<a href = "https://github.com/big-data-team/python-course/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo = big-data-team/python-course"/>
+</a>
+
+// made with [contributors-img](https://contrib.rocks).
