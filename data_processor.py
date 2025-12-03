@@ -13,7 +13,7 @@ class PandasDataProcessor:
 
     def load_data(self, filename: str) -> pd.DataFrame:
         """
-        Loads data into memory. Supports file with .csv or .parquet formats.
+        Loads data into memory. Supports file with .csv or .json formats.
         Raises Value error if other format is provided.
         """
 
