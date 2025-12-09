@@ -9,3 +9,4 @@ pytest-cov==2.10.0
 PyYAML==6.0
 requests==2.24.0
 werkzeug==2.2.3
+sqlmodel==0.0.27
