@@ -1,0 +1,66 @@
+links:
+  schema: |-
+    provide your
+    multiline answer here
+    .schema output from sqlite3
+  rows: 100500  # <-- change to the table row count
+movies:
+  schema: |-
+    provide your
+    multiline answer here
+    .schema output from sqlite3
+  rows: 100500  # <-- change to the table row count
+ratings:
+  schema: |-
+    provide your
+    multiline answer here
+    .schema output from sqlite3
+  rows: 100500  # <-- change to the table row count
+tags:
+  schema: |-
+    provide your
+    multiline answer here
+    .schema output from sqlite3
+  rows: 100500  # <-- change to the table row count
+projection:
+  query: |-
+    select ... limit 10;
+  stdout: |-
+    provide your
+    multiline answer here
+    SQL query execution output from sqlite3
+selection:
+  query: |-
+    select ...;
+  stdout: |-
+    provide your
+    multiline answer here
+    SQL query execution output from sqlite3
+join:
+  query: |-
+    select ...
+    from ... join ...
+    ... any number of lines here ...
+    ...;
+  stdout: |-
+    provide your
+    multiline answer here
+    SQL query execution output from sqlite3
+aggregation:
+  query: |-
+    select ...
+    ... any number of lines here ...
+    ...;
+  stdout: |-
+    provide your
+    multiline answer here
+    SQL query execution output from sqlite3
+subquery:
+  query: |-
+    select ...
+    ... any number of lines here ...
+    ...;
+  stdout: |-
+    provide your
+    multiline answer here
+    SQL query execution output from sqlite3
