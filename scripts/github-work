@@ -1,0 +1,35 @@
+#!/bin/sh
+
+REPO="$1"
+
+if [ -z "$TOKEN" ] ; then
+    echo "Set TOKEN env var"
+    exit 1
+fi
+
+if [ -z "$REPO" ] ; then
+    echo "Usage: $0 <repository>"
+    exit 1
+fi
+
+ACTION="$2"
+
+if [ -z "$ACTION" ] ; then
+    echo "Usage: $0 <repository> <action>"
+    exit 1
+fi
+
+if [ "$ACTION" = "create" ] ; then
+    ORG=$(echo "$REPO" | cut -d/ -f1)
+    NAME=$(echo "$REPO" | cut -d/ -f2)
+    curl -X POST -H "Authorization: Bearer $TOKEN" -sS "https://api.github.com/orgs/$ORG/repos" \
+      -d "{\"name\": \"$NAME\"}"
+elif [ "$ACTION" = "delete" ] ; then
+    curl -X DELETE -H "Authorization: Bearer $TOKEN" -sS "https://api.github.com/repos/$REPO" 
+elif [ "$ACTION" = "info" ] ; then
+    curl -sS "https://api.github.com/repos/$REPO" \
+         | jq '{"html_url", "visibility", "description", "url"}'
+else
+    echo "Unknown action: $ACTION"
+    exit 1
+fi
