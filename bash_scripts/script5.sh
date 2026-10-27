@@ -1,9 +1,7 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-X=10
 
-if ls /something; then
-    echo "success"
-else
-    echo "failure"
-fi
+for x in $(seq $1)
+do
+    echo hello >text$x.txt
+done

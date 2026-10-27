@@ -1,12 +1,8 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-NAME=$1
-echo Hello, \$NAME
-echo Hello, "$NAME"
-
-echo Hello, "\$NAME"
-echo Hello, '\$NAME'
-
-echo AAA "'"
-echo AAA '\'
-
+if ls /something
+then
+    echo True
+else
+    echo False
+fi

@@ -1,5 +1,3 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-echo Hello
-
-XX=Hello
+echo Hello, world

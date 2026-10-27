@@ -1,10 +1,9 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-X=1
-
-echo $[$X+2]
-
-# X = X + 2
-X=$[$X+2]
-
-echo $X # 3
+N=67
+if [ $N -le 100 ]
+then
+    echo True
+else
+    echo False
+fi
